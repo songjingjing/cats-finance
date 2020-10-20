@@ -1,0 +1,14 @@
+#pragma once
+#include <eosio/testing/tester.hpp>
+
+namespace eosio { namespace testing {
+
+struct contracts {
+   static std::vector<uint8_t> system_wasm() { return read_wasm("${CMAKE_SOURCE_DIR}/contracts/eosio.system/eosio.system.wasm"); }
+   static std::vector<char>    system_abi() { return read_abi("${CMAKE_SOURCE_DIR}/contracts/eosio.system/eosio.system.abi"); }
+   static std::vector<uint8_t> token_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../contracts/eosio.token/eosio.token.wasm"); }
+   static std::vector<char>    token_abi() { return read_abi("${CMAKE_BINARY_DIR}/../contracts/eosio.token/eosio.token.abi"); }
+   static std::vector<uint8_t> xpool_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../contracts/xpool/xpool.wasm"); }
+   static std::vector<char>    xpool_abi() { return read_abi("${CMAKE_BINARY_DIR}/../contracts/xpool/xpool.abi"); }
+};
+}} //ns eosio::testing
